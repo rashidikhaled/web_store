@@ -31,11 +31,11 @@ const Product = ({ product }) => {
         </div>
       </div>
       <div>
-        <div>{category}</div>
+        <div className="text-sm capitalize text-gray-500 mb-1">{category}</div>
         <Link to={`/product/${id}`}>
-          <h2>{shortenText(title)}</h2>
+          <h2 className="font-semibold mb-1">{shortenText(title)}</h2>
         </Link>
-        <h2>{price}</h2>
+        <h2 className="font-semibold ">$ {price}</h2>
       </div>
     </div>
   );
