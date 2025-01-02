@@ -1,12 +1,13 @@
 import React from "react";
 import { Link, Links } from "react-router-dom";
 import { BsPlus, BsEyeFill } from "react-icons/bs";
+import { shortenText } from "../helper/helper";
 
 const Product = ({ product }) => {
   // destructure product
   const { id, image, category, price, title } = product;
   return (
-    <>
+    <div>
       <div className="border border-[#e4e4e4] h-[300px] w-[300px]  mb-4 relative overflow-hidden group transition">
         <div className="w-full h-full flex justify-center items-center ">
           <div className="w-[200px] mx-auto flex justify-center items-center ">
@@ -29,7 +30,14 @@ const Product = ({ product }) => {
           </div>
         </div>
       </div>
-    </>
+      <div>
+        <div>{category}</div>
+        <Link to={`/product/${id}`}>
+          <h2>{shortenText(title)}</h2>
+        </Link>
+        <h2>{price}</h2>
+      </div>
+    </div>
   );
 };
 
